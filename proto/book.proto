@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package book;
+
+option go_package = "./pd";
+
+message BookRequest {};
+message BookResponse {
+    string title = 1;
+    int32 price = 2;
+};
+
+service BookService {
+    rpc Book (BookRequest) returns (BookResponse);
+}
