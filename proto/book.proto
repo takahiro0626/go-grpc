@@ -10,6 +10,15 @@ message BookResponse {
     int32 price = 2;
 };
 
+message VideoDownloadRequest {
+    string video_name = 1;
+}
+
+message VideoDownloadResponse {
+    bytes data = 1;
+}
+
 service BookService {
     rpc Book (BookRequest) returns (BookResponse);
+    rpc DownLoad (VideoDownloadRequest) returns (stream VideoDownloadResponse);
 }
